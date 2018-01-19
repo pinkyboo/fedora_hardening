@@ -1,12 +1,11 @@
 #!/bin/env python3
 
-import time, shutil, os, sys
+import shutil, os, sys
 import os.path as path
 
 # Print what the program does
 print("This tool will help you to blacklist vulnerable modules.")
 
-time.sleep(0.5)
 
 # Define function to go back to menu [clear screen & move cursor up ]
 def back_to_menu():
