@@ -3,7 +3,8 @@
 > …helps you to harden your kernel & allows you to block modules, like Firewire.<br>
 > Including a set of iptables rules to block common attacks, like XMAS & NULL Packets.
 <br><br>
-<b>Required:</b>
+
+<b>Required:</b><br>
 > Python 2.7 & 3
 <br><br>
 <b>Install:</b><br>
