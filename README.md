@@ -13,7 +13,10 @@
 >
 <br><br>
 <b>Run:</b><br>
-> `# cd ../fedora_hardening/`<br>
+>
+> `# cd $(dirname $(locate -l1 -r "/start.py$")) && python start.py`<br><br>
+> …or:<br><br>
+> `# cd $(dirname $(locate -l1 -r "/start.py$"))`<br>
 > `# python start.py`
 <br><br>
 <b>Note:</b>
