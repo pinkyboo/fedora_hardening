@@ -1,4 +1,4 @@
-#!/bin/env python3
+#!/bin/env python2.7
 
 import os, sys
 import os.path as path
