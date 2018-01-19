@@ -1,6 +1,6 @@
 #!/bin/env python3
 
-import os, sys, time
+import os, sys
 import os.path as path
 
 
