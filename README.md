@@ -1,6 +1,6 @@
 # Fedora_Hardening
 
-> …helps you to harden your kernel & allows you to block modules, like Firewire.<br>
+> …helps you to harden your Workstation kernel & allows you to disable modules, like Firewire.<br>
 > Including a set of iptables rules to block common attacks, like XMAS & NULL Packets.
 
 <br><br>
@@ -22,4 +22,4 @@
 <b>Note:</b>
 >Created as a private project, but free to use for everyone by now.
 >Still in development and testing cycle. <br>Original written in Bash and changed to Python for fun and learning.
->If someone finds issues, it would be nice<br>to let me know. Runs on Fedora 26 & 27.
+>If someone finds issues, it would be nice<br>to let me know. Runs on Fedora 26 & 27 Workstation.
