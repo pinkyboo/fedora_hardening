@@ -26,8 +26,8 @@ def multicast_disable():
       print("Nothing changed!")
 
 
+# Userinput
 print("{}{}{}{}{}".format(chr(27),"[1m", "Disable [MULTICAST] establishment?", chr(27), "[0m"))
-# Get input from user on defined functions
 while 1:
     inp = raw_input("[Y/N] [M]enu [Q]uit ").lower()
     if inp.strip() == "y":
