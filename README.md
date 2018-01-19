@@ -2,6 +2,7 @@
 
 > …helps you to harden your kernel & allows you to block modules, like Firewire.<br>
 > Including a set of iptables rules to block common attacks, like XMAS & NULL Packets.
+
 <br><br>
 
 <b>Required:</b><br>
