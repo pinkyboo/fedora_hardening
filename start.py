@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/bin/env python3
 # -*- coding: utf-8 -*-
 
 import sys, os, time
@@ -40,7 +40,7 @@ while i < 16:
 
 w("\n\n"); f(); w(" [ 1 :Hardening Kernel     ]═══════╗\n"); t(0.1); f(); t(0.1); w(" [ 2 :Blacklist Modules    ]═╦═════╩═╗\n")
 f(); t(0.1); w(" [ 3 :Disable Multicast    ]═╩══╗    ║\n"); f(); t(0.1); w(" [ 4 :Setup Iptables       ]════╝    ╚╦═╗\n")
-f(); t(0.1); w(" [ 5 :README               ]═════════╦╝ ║\n"); f(); t(0.1); w(" [ 6 :Quit                 ]═════════╝  ╚═")
+f(); t(0.1); w(" [ 5 :README               ]═════════╦╝ ║\n"); f(); t(0.1);  w(" [ 6 :Quit                 ]════════╦╝  ║\n"); w(" [ 7 :Revert All           ]════════╝   ╚═")
 f(); t(0.1)
 
 
@@ -68,6 +68,10 @@ while 1:
       w("{}{}{}{}{}".format(chr(27), "[1A", chr(27), "[2K", " [ 6 :Quit                 ]═════════╝  ╚═"))
     elif inp.strip() == "6":
       terminal_reset()
+      sys.exit()
+    elif inp.strip() == "7":
+      terminal_reset()
+      os.system('./main/revertAll.py')
       sys.exit()
     else:
       w("{}{}{}{}{}".format(chr(27), "[1A", chr(27), "[2K", " [ 6 :Quit                 ]═════════╝  ╚═"))
