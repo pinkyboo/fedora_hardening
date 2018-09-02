@@ -11,7 +11,7 @@ def back_to_menu():
    os.system(parent_path + "/start.py")
 
 
-def iptables_establish():
+def iptables_establish(iface):
    ############<-- IPv4 -->###############
    # Delete all existing rules and classes
    os.system("iptables -F && iptables -X") 
@@ -21,23 +21,23 @@ def iptables_establish():
    os.system("iptables -A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT")
 
    # Block [NULL] Packets
-   os.system("iptables -A INPUT -i wlp3s0 -p tcp --tcp-flags ALL FIN,URG,PSH -j DROP")
-   os.system("iptables -A INPUT -i wlp3s0 -p tcp --tcp-flags ALL ALL -j DROP")
-   os.system("iptables -A INPUT -i wlp3s0 -p tcp --tcp-flags ALL NONE -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix 'NULL Packets'")
+   os.system("iptables -A INPUT -i " + iface + " -p tcp --tcp-flags ALL FIN,URG,PSH -j DROP")
+   os.system("iptables -A INPUT -i " + iface + " -p tcp --tcp-flags ALL ALL -j DROP")
+   os.system("iptables -A INPUT -i " + iface + " -p tcp --tcp-flags ALL NONE -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix 'NULL Packets'")
 
-   os.system("iptables -A INPUT -i wlp3s0 -p tcp --tcp-flags ALL NONE -j DROP")
-   os.system("iptables -A INPUT -i wlp3s0 -p tcp --tcp-flags SYN,RST SYN,RST -j DROP")
+   os.system("iptables -A INPUT -i " + iface + " -p tcp --tcp-flags ALL NONE -j DROP")
+   os.system("iptables -A INPUT -i " + iface + " -p tcp --tcp-flags SYN,RST SYN,RST -j DROP")
 
    # Block [XMAS] Packets
-   os.system("iptables -A INPUT -i wlp3s0 -p tcp --tcp-flags SYN,FIN SYN,FIN -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix 'XMAS Packets'")
-   os.system("iptables -A INPUT -i wlp3s0 -p tcp --tcp-flags SYN,FIN SYN,FIN -j DROP")
+   os.system("iptables -A INPUT -i " + iface + " -p tcp --tcp-flags SYN,FIN SYN,FIN -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix 'XMAS Packets'")
+   os.system("iptables -A INPUT -i " + iface + " -p tcp --tcp-flags SYN,FIN SYN,FIN -j DROP")
 
    # Block [FIN] Packets Scan
-   os.system("iptables -A INPUT -i wlp3s0 -p tcp --tcp-flags FIN,ACK FIN -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix 'FIN Packets Scan'")
-   os.system("iptables -A INPUT -i wlp3s0 -p tcp --tcp-flags FIN,ACK FIN -j DROP")
+   os.system("iptables -A INPUT -i " + iface + " -p tcp --tcp-flags FIN,ACK FIN -m limit --limit 5/m --limit-burst 7 -j LOG --log-level 4 --log-prefix 'FIN Packets Scan'")
+   os.system("iptables -A INPUT -i " + iface + " -p tcp --tcp-flags FIN,ACK FIN -j DROP")
 
    # Block other common pits
-   os.system("iptables -A INPUT -i wlp3s0 -p tcp --tcp-flags ALL SYN,RST,ACK,FIN,URG -j DROP")
+   os.system("iptables -A INPUT -i " + iface + " -p tcp --tcp-flags ALL SYN,RST,ACK,FIN,URG -j DROP")
 
 
    # Enable logging for all IPv4 traffic
@@ -59,7 +59,8 @@ print("{}{}{}{}{}".format(chr(27), "[1m", "Setup Iptables Firewall against commo
 while 1:
     inp = raw_input("[Y/N] [M]enu [Q]uit ").lower()
     if inp.strip() == "y":
-      iptables_establish()
+      intr = raw_input("On which interface I should setup Iptables? ")
+      iptables_establish(intr)
       break
     elif inp.strip() == "n":
       break

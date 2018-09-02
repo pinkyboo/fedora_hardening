@@ -27,7 +27,7 @@ f=sys.stdout.flush
 t=time.sleep
 t(0.2); w("\n ZZ   ZZ \n"); t(0.1); w("  ZZ ZZ  "); f(); t(0.1); w("  ANTI"); f(); w("\n   ZZZ   "); f(); t(0.1) 
 w("  X"); f(); t(0.1); w("S"); f(); t(0.1); w("PLOI"); f(); t(0.1); w("T"); f(); t(0.1); w("\n  ZZ ZZ  "); f() 
-t(0.1); w("  BY PINKYBOO 2017"); f(); t(0.1); w("\n ZZ "); f(); t(0.1); w("  ZZ   "); f()
+t(0.1); w("  BY PINKYBOO 2018"); f(); t(0.1); w("\n ZZ "); f(); t(0.1); w("  ZZ   "); f()
 
 
 i=0

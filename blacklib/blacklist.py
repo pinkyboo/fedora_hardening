@@ -19,7 +19,7 @@ print("{}{}{}{}{}".format(chr(27), "[1m", "Disable the Firewire module?", chr(27
 while 1:
     inp = input("[Y/N] [M]enu [Q]uit ").lower()
     if inp.strip() == "y":
-      shutil.copyfile("./blacklist-firewire.conf" "/etc/modprobe.d/blacklist-firewire.conf")
+      shutil.copyfile("./blacklist-firewire.conf", "/etc/modprobe.d/blacklist-firewire.conf")
     elif inp.strip() == "n":
       break
     elif inp.strip() == "m":
@@ -37,7 +37,7 @@ print("{}{}{}{}{}".format(chr(27), "[1m", "Disable automatic detection of usb-st
 while 1:
     inp = input("[Y/N] [M]enu [Q]uit ").lower()
     if inp.strip() == "y":
-      shutil.copyfile("./blacklist-auto-usb.conf" "/etc/modprobe.d/blacklist-auto-usb.conf")
+      shutil.copyfile("./blacklist-auto-usb.conf", "/etc/modprobe.d/blacklist-auto-usb.conf")
     elif inp.strip() == "n":
       break
     elif inp.strip() == "m":
@@ -55,7 +55,7 @@ print("{}{}{}{}{}".format(chr(27), "[1m", "Disable raw connection modules?", chr
 while 1:
     inp = input("[Y/N] [M]enu [Q]uit ").lower()
     if inp.strip() == "y":
-      shutil.copyfile("./blacklist-raw-connections.conf" "/etc/modprobe.d/blacklist-raw-connections.conf")
+      shutil.copyfile("./blacklist-raw-connections.conf", "/etc/modprobe.d/blacklist-raw-connections.conf")
     elif inp.strip() == "n":
       break
     elif inp.strip() == "m":
