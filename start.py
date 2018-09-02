@@ -1,4 +1,4 @@
-#!/bin/env python
+#!/bin/env python3
 # -*- coding: utf-8 -*-
 
 import sys, os, time
@@ -27,7 +27,7 @@ f=sys.stdout.flush
 t=time.sleep
 t(0.2); w("\n ZZ   ZZ \n"); t(0.1); w("  ZZ ZZ  "); f(); t(0.1); w("  ANTI"); f(); w("\n   ZZZ   "); f(); t(0.1) 
 w("  X"); f(); t(0.1); w("S"); f(); t(0.1); w("PLOI"); f(); t(0.1); w("T"); f(); t(0.1); w("\n  ZZ ZZ  "); f() 
-t(0.1); w("  BY PINKYBOO 2017"); f(); t(0.1); w("\n ZZ "); f(); t(0.1); w("  ZZ   "); f()
+t(0.1); w("  BY PINKYBOO 2018"); f(); t(0.1); w("\n ZZ "); f(); t(0.1); w("  ZZ   "); f()
 
 
 i=0
@@ -40,7 +40,7 @@ while i < 16:
 
 w("\n\n"); f(); w(" [ 1 :Hardening Kernel     ]═══════╗\n"); t(0.1); f(); t(0.1); w(" [ 2 :Blacklist Modules    ]═╦═════╩═╗\n")
 f(); t(0.1); w(" [ 3 :Disable Multicast    ]═╩══╗    ║\n"); f(); t(0.1); w(" [ 4 :Setup Iptables       ]════╝    ╚╦═╗\n")
-f(); t(0.1); w(" [ 5 :README               ]═════════╦╝ ║\n"); f(); t(0.1); w(" [ 6 :Quit                 ]═════════╝  ╚═")
+f(); t(0.1); w(" [ 5 :README               ]═════════╦╝ ║\n"); f(); t(0.1);  w(" [ 6 :Quit                 ]════════╦╝  ║\n"); w(" [ 7 :Revert All           ]════════╝   ╚═")
 f(); t(0.1)
 
 
@@ -68,6 +68,10 @@ while 1:
       w("{}{}{}{}{}".format(chr(27), "[1A", chr(27), "[2K", " [ 6 :Quit                 ]═════════╝  ╚═"))
     elif inp.strip() == "6":
       terminal_reset()
+      sys.exit()
+    elif inp.strip() == "7":
+      terminal_reset()
+      os.system('./main/revertAll.py')
       sys.exit()
     else:
       w("{}{}{}{}{}".format(chr(27), "[1A", chr(27), "[2K", " [ 6 :Quit                 ]═════════╝  ╚═"))
